@@ -31,5 +31,5 @@ export const processRequest = (
     }
   
     // If the request is not from the same domain, return a 403 Forbidden response
-    return new Response("Forbidden", { status: 403 });
+    return new Response("Forbidden, you silly goose", { status: 403 });
 }
