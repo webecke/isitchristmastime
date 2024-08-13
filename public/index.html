@@ -1,52 +1,17 @@
 <!DOCTYPE html>
-
-<!------- DallinFromEarth -------->
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Is it Christmas Time?</title>
-    <link rel="stylesheet" href="main.css">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="favicons/site.webmanifest">
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-</head>
-<body>
-
-<div class="main standard-flex">
-    <div class="answer-box standard-flex">
-        <h1 id="answer">MAYBE</h1>
-        <p id="subanswer">But I'm not sure ¯\_(ツ)_/¯</p>
-    </div>
-    <div class="description standard-flex">
-        <p class="info">The world seems increasingly divided.</p>
-        <p class="info">Yet while Christmas should be something that unites us, the start of the Christmas season is often a source of contention.</p>
-        <p class="info">That is why I am on a quest to find the true start of Christmas.</p>
-        <p class="standout">And I need your help!</p>
-        <img src="me-with-tree.jpg"/>
-        <p class="info">You can start by taking the offical survey and letting your opinion be counted</p>
-        <button class="survey"><a class="button-link" href="https://docs.google.com/forms/d/e/1FAIpQLSecMiHp5bRc4ntwMZrIN8SBYExsutA8Y2BiPqn_pQfAuPd5jg/viewform?usp=sf_link">
-            When do you think Christmas Time Starts?
-        </a></button>
-        <p class="info">Then, share it with your friends.</p>
-        <button class="social_button"><a target="_blank" class="social" href="https://www.facebook.com/sharer.php?u=isitchristmastime.com">Share on Facebook</a></button>
-        <button class="social_button"><a target="_blank" class="social" href="https://twitter.com/intent/tweet?url=isitchristmastime.com&text=Support%20the%20quest%20to%20find%20the%20true%20start%20of%20the%20Christmas%20Season%20by%20taking%20this%20short%20survey&hashtags=Christmas,survey">Share on Twitter</a></button>
-        <br/>
-        <p class="info">More info and survey results will be posted here as time moves on.</p>
-        <p class="info">And also hopefully the website improves too</p>
-    </div>
-    <div class="footer standard-flex">
-        <p>IsItChristmasTime.com</p>
-        <p>DallinFromEarth Ⓒ2024</p>
-    </div>
-</div>
-
-
-</body>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
