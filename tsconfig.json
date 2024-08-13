@@ -8,6 +8,7 @@
       "path": "./tsconfig.app.json"
     }
 ],
+"exclude": ["functions/**/*"],
 "compilerOptions": {
     "types": [
         "@cloudflare/workers-types/2023-07-01"
