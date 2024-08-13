@@ -36,6 +36,18 @@
   --section-gap: 160px;
 }
 
+/* color palette from <https://coolors.co/386641-6a994e-a7c957-f2e8cf-bc4749> */
+:root {
+  --dark-hunter-green: #0E1A11;
+  --hunter-green: #386641ff;
+  --asparagus: #6a994eff;
+  --bright-asparagus: rgb(74, 201, 0);
+  --yellow-green: #a7c957ff;
+  --parchment: #f2e8cfff;
+  --bittersweet-shimmer: #bc4749ff;
+  --dark-bittersweet-shimer: #170809;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -45,8 +57,8 @@
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-heading: var(--bright-asparagus);
+    --color-text: var(--bright-asparagus);
   }
 }
 
