@@ -3,6 +3,7 @@ import { BASE_URL } from '@/networkTools';
 import { onMounted, ref } from 'vue';
 
 onMounted( async () => {
+    console.log(BASE_URL + " <- oh look, the base URL")
     const response = await fetch(BASE_URL + "/test-cors", {
         method: 'GET', // or 'POST', 'PUT', etc. depending on your worker's method
         headers: {
