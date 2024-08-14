@@ -7,7 +7,12 @@ interface Env {
 export const onRequest: PagesFunction<Env> = async (context) => {
   const { request } = context
 
-  return processRequest(request, (request) => {
-    return new Response('I THINK IT WORKED!!!!', { status: 201 })
-  })
+  try {
+    return processRequest(request, (request) => {
+      return new Response('I THINK IT WORKED!!!!', { status: 201 })
+    })
+  } catch (error) {
+    console.log('Dang, an error', +error)
+    return new Response('Dang, a super error: ' + error, { status: 501 })
+  }
 }
