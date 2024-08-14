@@ -29,11 +29,5 @@ export const processRequest = (
   }
 
   // If the request is not from the same domain, return a 403 Forbidden response
-  return new Response(
-    "Forbidden, you silly goose. You're requesting from: " +
-      new URL(request.url).hostname +
-      ' but we only accept ' +
-      new URL(origin).hostname,
-    { status: 403 }
-  )
+  return new Response('Forbidden, you silly goose.', { status: 403 })
 }
