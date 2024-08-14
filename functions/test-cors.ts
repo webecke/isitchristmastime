@@ -13,6 +13,16 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     })
   } catch (error) {
     console.log('Dang, an error', +error)
-    return new Response('Dang, a super error: ' + error, { status: 501 })
+    return new Response(
+      'Dang, a super error: ' +
+        error +
+        '\n' +
+        "here's some other info:\n" +
+        'request URL: ' +
+        request.url +
+        '\nOrigin URL: ' +
+        request.headers.get('Origin'),
+      { status: 501 }
+    )
   }
 }
