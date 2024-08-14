@@ -1,15 +1,13 @@
-import { processRequest } from "./processRequest";
+import { processRequest } from './processRequest'
 
 interface Env {
-    KV: KVNamespace;
-  }
-  
-  export const onRequest: PagesFunction<Env> = async (context) => {
-    const { request } = context;
+  KV: KVNamespace
+}
 
-    console.log("HEY!!!!", request.url)
-  
-    return processRequest(request, (request) => {
-        return new Response("I THINK IT WORKED!!!!", {status: 201})
-    })
-  };
+export const onRequest: PagesFunction<Env> = async (context) => {
+  const { request } = context
+
+  return processRequest(request, (request) => {
+    return new Response('I THINK IT WORKED!!!!', { status: 201 })
+  })
+}
