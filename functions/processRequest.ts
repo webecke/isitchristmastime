@@ -8,7 +8,7 @@ export const processRequest = (
   const origin = request.headers.get('Origin')
 
   // Check if the origin is from the same domain
-  if (origin && new URL(origin).hostname === new URL(request.url).hostname) {
+  if (origin == null || (origin && new URL(origin).hostname === new URL(request.url).hostname)) {
     const corsHeaders = {
       'Access-Control-Allow-Origin': origin, // Allow the specific origin that made the request
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS', // Specify the allowed methods
