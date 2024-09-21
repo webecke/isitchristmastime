@@ -24,7 +24,7 @@ export const processRequest = (
     }
 
     // Return the actual response with CORS headers
-    var response = requestHandler(request)
+    const response = requestHandler(request)
     return new Response(response.body, { ...response, headers: corsHeaders })
   }
 

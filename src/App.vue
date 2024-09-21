@@ -1,10 +1,21 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import { onMounted, ref } from 'vue'
+import { potatoGet } from '@/testNetwork'
+
+onMounted(async () => {
+  console.log("Potato go")
+  testString.value = await potatoGet();
+  console.log("Potato come: " + testString.value)
+});
+
+const testString = ref<String>("not set")
 </script>
 
 <template>
   <header>
-    <h1>Is It Christmas Time?</h1>
+    <h1>Is It Christmas Time???</h1>
+    <h2 v-html="testString"/>
   </header>
 
   <RouterView />
