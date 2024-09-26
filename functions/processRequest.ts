@@ -1,6 +1,7 @@
 export const processRequest = (
   request: Request<unknown, IncomingRequestCfProperties<unknown>>,
-  requestHandler: (request: Request<unknown, IncomingRequestCfProperties<unknown>>) => Response
+  requestHandler: (request: Request<unknown, IncomingRequestCfProperties<unknown>>) => Response,
+  actionMessage: String = "doing something"
 ): Response => {
   // Get the Origin header from the incoming request
   const origin = request.headers.get('Origin')
@@ -23,9 +24,13 @@ export const processRequest = (
       })
     }
 
-    // Return the actual response with CORS headers
-    const response = requestHandler(request)
-    return new Response(response.body, { ...response, headers: corsHeaders })
+    try {
+      // Return the actual response with CORS headers
+      const response = requestHandler(request)
+      return new Response(response.body, { ...response, headers: corsHeaders })
+    } catch (e) {
+      return new Response("Uhhhh, something broke while " + actionMessage, { status: 500 })
+    }
   }
 
   // If the request is not from the same domain, return a 403 Forbidden response
