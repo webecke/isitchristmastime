@@ -1,8 +1,5 @@
 import { processRequest } from './processRequest'
-
-interface Env {
-  KV: KVNamespace
-}
+import { Env } from './env'
 
 export const onRequest: PagesFunction<Env> = async (context) => {
   const { request } = context

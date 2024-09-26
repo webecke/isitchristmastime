@@ -1,21 +1,23 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import { onMounted, ref } from 'vue'
-import { potatoGet } from '@/testNetwork'
+import { doStandardGet } from '@/networkTools'
 
 onMounted(async () => {
-  console.log("Potato go")
-  testString.value = await potatoGet();
-  console.log("Potato come: " + testString.value)
+  let data = await doStandardGet("/isit")
+  isItChristmasTimeAnswer.value = data.answer
+  isItChristmasTimeExplanation.value = data.explanation
 });
 
-const testString = ref<String>("not set")
+const isItChristmasTimeAnswer = ref<String>("")
+const isItChristmasTimeExplanation = ref<String>("")
 </script>
 
 <template>
   <header>
     <h1>Is It Christmas Time???</h1>
-    <h2 v-html="testString"/>
+    <p id="answer" v-text="isItChristmasTimeAnswer"/>
+    <p v-text="isItChristmasTimeExplanation"/>
   </header>
 
   <RouterView />
@@ -26,6 +28,11 @@ const testString = ref<String>("not set")
 </template>
 
 <style scoped>
+#answer {
+  font-size: 100px;
+  text-align: center;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
