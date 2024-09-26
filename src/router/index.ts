@@ -1,4 +1,3 @@
-import SeasonAnswerView from '@/views/SeasonAnswerView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -7,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: SeasonAnswerView
+      component: {  }
     },
     /*{
       path: '/about',
